@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Healthcare-specific color variables */
+  --medical-blue: hsl(207, 90%, 54%);
+  --healthcare-green: hsl(122, 39%, 49%);
+  --alert-orange: hsl(14, 100%, 57%);
+  --soft-gray: hsl(0, 0%, 98%);
+  --emergency-red: hsl(0, 84%, 60%);
+  --patient-blue: hsl(207, 90%, 94%);
+  --doctor-green: hsl(122, 39%, 94%);
+  --nurse-purple: hsl(258, 90%, 94%);
+  --admin-orange: hsl(14, 100%, 94%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Dark mode healthcare colors */
+  --medical-blue: hsl(207, 90%, 64%);
+  --healthcare-green: hsl(122, 39%, 59%);
+  --alert-orange: hsl(14, 100%, 67%);
+  --soft-gray: hsl(240, 3.7%, 15.9%);
+  --emergency-red: hsl(0, 84%, 70%);
+  --patient-blue: hsl(207, 90%, 24%);
+  --doctor-green: hsl(122, 39%, 24%);
+  --nurse-purple: hsl(258, 90%, 24%);
+  --admin-orange: hsl(14, 100%, 24%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* Healthcare-specific utility classes */
+  .medical-blue {
+    color: var(--medical-blue);
+  }
+  
+  .bg-medical-blue {
+    background-color: var(--medical-blue);
+  }
+  
+  .healthcare-green {
+    color: var(--healthcare-green);
+  }
+  
+  .bg-healthcare-green {
+    background-color: var(--healthcare-green);
+  }
+  
+  .alert-orange {
+    color: var(--alert-orange);
+  }
+  
+  .bg-alert-orange {
+    background-color: var(--alert-orange);
+  }
+  
+  .emergency-red {
+    color: var(--emergency-red);
+  }
+  
+  .bg-emergency-red {
+    background-color: var(--emergency-red);
+  }
+  
+  /* Role-based background colors */
+  .role-patient {
+    background-color: var(--patient-blue);
+  }
+  
+  .role-doctor {
+    background-color: var(--doctor-green);
+  }
+  
+  .role-nurse {
+    background-color: var(--nurse-purple);
+  }
+  
+  .role-admin {
+    background-color: var(--admin-orange);
+  }
+  
+  /* Accessibility improvements for elderly patients */
+  .kiosk-mode {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+  
+  .kiosk-mode button {
+    min-height: 3.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .kiosk-mode input {
+    min-height: 3rem;
+    font-size: 1.125rem;
+    padding: 1rem;
+  }
+  
+  /* High contrast mode for accessibility */
+  .high-contrast {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(0, 0%, 0%);
+    --border: hsl(0, 0%, 20%);
+    --primary: hsl(220, 100%, 40%);
+    --primary-foreground: hsl(0, 0%, 100%);
+  }
+  
+  /* Animation for queue updates */
+  .queue-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .8;
+    }
+  }
+  
+  /* Notification styles */
+  .notification-enter {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Loading skeleton */
+  .skeleton {
+    background: linear-gradient(90deg, hsl(0, 0%, 90%) 25%, transparent 37%, hsl(0, 0%, 90%) 63%);
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.4s ease infinite;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: -100% 50%;
+    }
+  }
+  
+  /* Focus styles for accessibility */
+  .focus-visible:focus {
+    outline: 2px solid var(--medical-blue);
+    outline-offset: 2px;
+  }
+  
+  /* Emergency alert styling */
+  .emergency-alert {
+    border-left: 4px solid var(--emergency-red);
+    background-color: hsl(0, 84%, 97%);
+    animation: emergency-pulse 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes emergency-pulse {
+    from {
+      box-shadow: 0 0 0 0 hsla(0, 84%, 60%, 0.7);
+    }
+    to {
+      box-shadow: 0 0 0 10px hsla(0, 84%, 60%, 0);
+    }
+  }
+  
+  /* Department color coding */
+  .dept-cardiology {
+    border-left: 4px solid hsl(207, 90%, 54%);
+    background-color: hsl(207, 90%, 97%);
+  }
+  
+  .dept-pediatrics {
+    border-left: 4px solid hsl(122, 39%, 49%);
+    background-color: hsl(122, 39%, 97%);
+  }
+  
+  .dept-emergency {
+    border-left: 4px solid hsl(14, 100%, 57%);
+    background-color: hsl(14, 100%, 97%);
+  }
+  
+  .dept-orthopedics {
+    border-left: 4px solid hsl(258, 90%, 54%);
+    background-color: hsl(258, 90%, 97%);
+  }
+  
+  /* Mobile responsiveness for tablets/kiosks */
+  @media (max-width: 768px) {
+    .kiosk-mode {
+      font-size: 1.5rem;
+    }
+    
+    .kiosk-mode button {
+      min-height: 4rem;
+      font-size: 1.25rem;
+    }
+    
+    .kiosk-mode input {
+      min-height: 3.5rem;
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Print styles for tokens and reports */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .token-print {
+      page-break-inside: avoid;
+      border: 2px solid hsl(0, 0%, 0%);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+  }
+}
+
+/* Custom scrollbar for better UX */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 95%);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 70%);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 60%);
+}

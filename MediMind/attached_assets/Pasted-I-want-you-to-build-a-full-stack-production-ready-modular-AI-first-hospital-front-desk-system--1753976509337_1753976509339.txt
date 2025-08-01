@@ -1,0 +1,39 @@
+I want you to build a **full-stack, production-ready, modular, AI-first hospital front desk system** in a single execution, covering every requirement listed below.
+
+### System Overview (include all 24 sections comprehensively):
+1. Adaptive **User Interfaces**: React UIs for self-service kiosk, patient/staff/admin web portal, mobile/tablet views; support QR scanning, multilingual voice/text input, accessibility for elderly, theme customization.
+2. **Role-Based Access Control (RBAC)**: Super Admin, HR Admin, Doctor, Nurse, Front Desk, Patient, Insurance Desk, Pharmacy, Department Head, and SSD with Aadhaar/OTP/email login and role-specific dashboards.
+3. **AI-powered Interaction Layer**: Chatbot and voicebot (OpenAI + Whisper), Twilio/Exotel + ElevenLabs integration for appointment booking (new/follow-up), department/facility queries, document upload instructions, walk-in vs online registration logic.
+4. **Patient Identity Onboarding**: Aadhaar/PAN/insurance-based onboarding; optional face/photo capture; AI-based validation via chat/voice/call.
+5. **Queue & Token Management**: Smart FIFO queue with urgency & department logic; QR token generation; real-time queue dashboards; rescheduling/cancellation (admin/patient where allowed); token alerts via SMS/WhatsApp/email.
+6. **Admin (HR) Dashboard**: Sync doctor/nurse availability; avoid double-booking; roster planning; emergency shift adjustments; on-call assignment and notifications.
+7. **Document & Insurance Workflow**: Upload prescriptions, reports, insurance docs; integrate EMR/HIMS/LIMS; eligibility API checks; pre-auth triggers; claim tracker.
+8. **Real-Time Consultation Tracking**: Live doctor schedule, delays, consultation times; delay notifications; admin intervention dashboard.
+9. **Grievance & Feedback Handling**: Sentiment-aware chatbot UI; NLP classification of issues; escalation workflows; analytic feedback dashboard.
+10. **Doctor Dashboard**: Appointment calendar; AI Health Assistant chatbot; access to medical history, labs, patient notes; voice/text dictation; smart search in hospital DB.
+11. **Nurse Dashboard**: Inpatient vitals/labs/med '/' meds management; checklist tracking; remarks and history access.
+12. **Front Desk Dashboard**: Appointment overview; token status; manual override; double-book avoidance; emergency alerts; fee/payment status; doctor calendar view.
+13. **Lab Dashboard**: LIMS/HIMS integration; sample collection tracking; delay alerts; sync with patient/doctor/insurance portals; auto-report-ready updates.
+14. **Pharmacy Module**: Prescription alerts, medicine counter wait time display; online payment option; integration with inventory.
+15. **SSD Dashboard**: Inventory tracking of surgical kits, beds, OT supplies, blood units; auto-replenishment alerts.
+16. **Ward-wise Dashboard**: Ward-level patient listing; nurse assignments; vitals and labs view.
+17. **Security & Compliance**: HIPAA + NDHM compliance; encryption at rest and transit; secure audit trails; role-based data masking.
+18. **Notifications & Payment**: Razorpay integration for billing and estimate alerts; SMS/WhatsApp notifications (Twilio/Exotel); email via SMTP/Gmail.
+19. **Predictive Analytics Engine**: Forecast footfall, wait times, load; recommend optimal doctor allocation and slots.
+20. **Regulatory Reporting**: Auto-export dashboards for NDHM, NABH, state formats (CSV/XML/Excel); data sourced from EMR, appointment, token logs.
+21. **Add‑On Services**: Ambulance booking, private room upgrades, dietician scheduling; upsell flows via chatbot/kiosk with payment support.
+22. **Modular Microservices Architecture**: Clean separation of frontend/UI, AI, queue, auth, dashboards, analytics, notification, and compliance services; open REST APIs.
+23. **Tech Stack & Environment Setup**: Replit-based environment: React frontend, Node.js/Express backend, PostgreSQL, OpenAI GPT + Whisper, ElevenLabs, Twilio/Exotel, Razorpay; deployment auto-configured in Replit.
+24. **Complete Role-to-Module RBAC Matrix**: enforce at both frontend and backend, role-specific feature access and data visibility exactly matching your matrix.
+
+### Instructions:
+• Begin by presenting a **development plan** summarizing architecture, file structure, tech stack, and module mappings—do not generate code until I approve.  
+• After my approval, scaffold the entire project in one execution: install dependencies, setup database schema, generate frontend and backend code, configure API keys, and deploy.  
+• Pause to ask for API keys or secrets before injecting them.  
+• Provide test endpoints or UI mock-ups for login, appointment booking, queue token assignment.  
+• Ensure everything is generated in one continuous run—not split or phased.  
+• Document RBAC matrix logic so I can review it.  
+• Explain compliance and encryption implementation choices inline as comments or README.
+
+Please confirm you understand this full-scope one-shot requirement, then present the plan.
+
